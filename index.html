@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Interaktif</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="#" class="logo">Portofolio</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Argonical Game Hub</h1>
+            <p>Menyuplai Seluruh kebutuhan Game anda agar lebih menyenangkan tentunya.</p>
+            <a href="#services" class="btn">Our Services</a>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Kami menawarkan semua apa yang anda butuhkan.</p>
+        </div>
+        <div class="service-icon">
+            <i class="fas fa-money"></i>
+        </div>
+                <h3>Pembelian semua mata uang game</h3>
+                <p>Seluruh mata uang dari game : Mobile legend,PUBG,Genshin Impact.</p>
+            </div>
+            
+                <h3>Joki Rank</h3>
+                <p>Menaikan seluruh rank anda sampai ke rank yang anda inginkan dengan mudah tentunya.</p>
+            </div>
+            
+                
+                
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-title">
+            <h2>Testimoni yang udah make jasa kita</h2>
+        </div>
+        <div class="testimonial-slider">
+            <div class="testimonial active">
+                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client 1">
+                <p>"Buset order sabtu, pas senin udah selesai aja jokiannya bang mantaaap."</p>
+                <div class="testimonial-author">- Naribusi,Evos fam</div>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client 2">
+                <p>" Beli diamon ngga ada 1 menit udah langsung masuk aja,puas pokonya."</p>
+                <div class="testimonial-author">- Kairul,RRQ Kingdom</div>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client 3">
+                <p>"Pusing naikin rank tapi order disini langsung 2 hari jadi glyory, emang ngga mengecewakan."</p>
+                <div class="testimonial-author">- Claudia, Streamer Yt</div>
+            </div>
+            <div class="slider-controls">
+                <span class="slider-dot active" data-index="0"></span>
+                <span class="slider-dot" data-index="1"></span>
+                <span class="slider-dot" data-index="2"></span>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>Kami mempermudah segala ususan game anda agar lebih jadi enak dan lebih jago tentunya</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Pembelian mata uang game</a></li>
+                    <li><a href="#">Joki Rank</a></li>
+                    
+                    <li><a href="#">Digital Marketing</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> Tangerang Kota</li>
+                    <li><i class="fas fa-phone"></i> 085602316391</li>
+                    <li><i class="fas fa-envelope"></i> Argonikalgamehub.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Portfolio Design. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple testimonial slider
+        document.addEventListener('DOMContentLoaded', function() {
+            const dots = document.querySelectorAll('.slider-dot');
+            const testimonials = document.querySelectorAll('.testimonial');
+            
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const index = this.getAttribute('data-index');
+                    
+                    // Remove active class from all
+                    testimonials.forEach(t => t.classList.remove('active'));
+                    dots.forEach(d => d.classList.remove('active'));
+                    
+                    // Add active class to selected
+                    testimonials[index].classList.add('active');
+                    this.classList.add('active');
+                });
+            });
+            
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
